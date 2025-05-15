@@ -38,7 +38,6 @@ class TeacherController extends Controller
             'materia' => 'required|string|max:45',
             'seconda_materia' => 'nullable|string|max:45',
             'email' => 'required|email|max:45',
-            'password' => 'required|string|min:6',
         ]);
 
         Teacher::create([
@@ -48,7 +47,6 @@ class TeacherController extends Controller
             'materia' => $request->materia,
             'seconda_materia' => $request->seconda_materia,
             'email' => $request->email,
-            'password' => bcrypt($request->password),
         ]);
 
         return redirect()->route('docenti.index')->with('success', 'Professore aggiunto con successo!');
@@ -84,7 +82,6 @@ class TeacherController extends Controller
         'materia' => 'required|string|max:45',
         'seconda_materia' => 'nullable|string|max:45',
         'email' => 'required|email|max:45',
-        'password' => 'nullable|string|min:6',
     ]);
 
     $docente = Teacher::findOrFail($id_professore);
@@ -94,10 +91,6 @@ class TeacherController extends Controller
     $docente->materia = $request->materia;
     $docente->seconda_materia = $request->seconda_materia;
     $docente->email = $request->email;
-
-    if ($request->filled('password')) {
-        $docente->password = bcrypt($request->password);
-    }
 
     $docente->save();
 

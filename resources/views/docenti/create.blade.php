@@ -34,11 +34,6 @@
         </div>
 
         <div class="mb-4">
-            <label for="password" class="block font-semibold mb-1">Password</label>
-            <input type="password" id="password" name="password" class="border p-2 w-full rounded" required>
-        </div>
-
-        <div class="mb-4">
             <label for="id_user" class="block font-semibold mb-1">Utente associato</label>
             <select id="id_user" name="id_user" class="border p-2 w-full rounded" required>
                 @foreach ($users as $user)

@@ -8,7 +8,7 @@
     <p><strong>Nome:</strong> {{ $student->nome }}</p>
     <p><strong>Cognome:</strong> {{ $student->cognome }}</p>
     <p><strong>Email:</strong> {{ $student->user->email }}</p>
-    <p><strong>Classe:</strong> {{ $student->classe }}</p>
+    <p><strong>Classe:</strong> {{ $student->id_classe }}</p>
 
     <h3 class="text-lg font-semibold mt-6">Voti</h3>
     <ul>

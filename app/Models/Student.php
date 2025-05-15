@@ -20,7 +20,7 @@ class Student extends Model
         'id_studente',
         'nome',
         'cognome',
-        'classe',
+        'id_classe',
         'id_notifica',
         'id_user',
     ];
@@ -40,7 +40,7 @@ class Student extends Model
     // Relazione con il modello Classe
     public function classe()
     {
-        return $this->belongsTo(Classe::class, 'classe', 'id_classe');
+        return $this->belongsTo(Classe::class, 'id_classe', 'id_classe');
     }
 
     // Relazione con il modello Grade
@@ -61,12 +61,12 @@ class Student extends Model
         $student = new Student();
         $student->nome = $request->nome;
         $student->cognome = $request->cognome;
-        $student->classe = $request->classe;
+        $student->id_classe = $request->id_classe;
         $student->id_notifica = $request->id_notifica;
         $student->id_user = $request->id_user;
 
         // Controlla se la classe esiste
-        $classeExists = Classe::where('id_classe', $request->classe)->exists();
+        $classeExists = Classe::where('id_classe', $request->id_classe)->exists();
         dd('Classe esiste?', $classeExists); // Verifica se la classe esiste nel database
 
         if (!$classeExists) {

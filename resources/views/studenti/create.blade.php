@@ -19,7 +19,7 @@
 
         <div class="mb-4">
             <label for="classe" class="block">Classe</label>
-            <select name="classe" id="classe" class="border p-2 w-full" required>
+            <select name="id_classe" id="id_classe" class="border p-2 w-full" required>
                 <option value="">Seleziona Classe</option>
                 @foreach ($classes as $classe)
                     <option value="{{ $classe->id_classe }}">{{ $classe->nome }} {{ $classe->sezione }}</option>

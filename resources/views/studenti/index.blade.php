@@ -18,7 +18,6 @@
             <table class="w-full border-collapse border border-gray-300">
                 <thead>
                     <tr class="bg-gray-200">
-                        <th class="border border-gray-300 px-4 py-2">ID</th>
                         <th class="border border-gray-300 px-4 py-2">Nome</th>
                         <th class="border border-gray-300 px-4 py-2">Cognome</th>
                         <th class="border border-gray-300 px-4 py-2">Classe</th>
@@ -29,10 +28,9 @@
                 <tbody>
                     @foreach($students as $student)
                     <tr>
-                        <td class="border border-gray-300 px-4 py-2">{{ $student->id_studente }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $student->nome }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $student->cognome }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $student->classe }}</td> <!-- Mostra la classe -->
+                        <td class="border border-gray-300 px-4 py-2">{{ $student->id_classe }}</td> <!-- Mostra la classe -->
                         <td class="border border-gray-300 px-4 py-2">{{ $student->user->email ?? 'N/A' }}</td> <!-- Email se esiste -->
                         <td class="border border-gray-300 px-4 py-2">
                             <a href="{{ route('studenti.show', $student->id_studente) }}" class="text-green-600 hover:underline mr-2">Visualizza</a>

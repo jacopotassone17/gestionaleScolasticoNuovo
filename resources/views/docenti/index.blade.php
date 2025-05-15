@@ -11,20 +11,20 @@
         <table class="w-full border-collapse border border-gray-300">
             <thead>
                 <tr class="bg-gray-200">
-                    <th class="border border-gray-300 px-4 py-2">ID</th>
-                    <th class="border border-gray-300 px-4 py-2">Nome</th>
+                    <th class="border border-gray-300 px-4 py-2">Nome e cognome</th>
                     <th class="border border-gray-300 px-4 py-2">Email</th>
                     <th class="border border-gray-300 px-4 py-2">Materia</th>
+                    <th class="border border-gray-300 px-4 py-2">Seconda Materia</th>
                     <th class="border border-gray-300 px-4 py-2">Azioni</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($docenti as $docente)
                 <tr>
-                    <td class="border border-gray-300 px-4 py-2">{{ $docente->id_professore }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $docente->nome }} {{ $docente->cognome }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $docente->email }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ $docente->materia }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ $docente->seconda_materia }}</td>
                     <td class="border border-gray-300 px-4 py-2">
                         <a href="{{ route('docenti.show', $docente->id_professore) }}" class="text-green-600 hover:underline mr-2">Visualizza</a>
                         <a href="{{ route('docenti.edit', $docente->id_professore) }}" class="text-blue-600 hover:underline mr-2">Modifica</a>

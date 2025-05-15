@@ -34,12 +34,6 @@
             <input type="text" id="seconda_materia" name="seconda_materia" value="{{ old('seconda_materia', $docente->seconda_materia) }}" class="border border-gray-300 p-2 w-full rounded">
         </div>
 
-        <div>
-            <label for="password" class="block font-semibold mb-1">Nuova Password (opzionale)</label>
-            <input type="password" id="password" name="password" class="border border-gray-300 p-2 w-full rounded">
-            <p class="text-sm text-gray-500 mt-1">Lascia vuoto se non vuoi cambiarla</p>
-        </div>
-
         <div class="flex space-x-4">
             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
                 Salva Modifiche

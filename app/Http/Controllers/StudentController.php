@@ -45,7 +45,7 @@ class StudentController extends Controller
     $validated = $request->validate([
         'nome' => 'required|max:45',
         'cognome' => 'required|max:45',
-        'classe' => 'required|max:45',  // Solo max, non exist
+        'id_classe' => 'required|max:45',  // Solo max, non exist
         'id_notifica' => 'nullable|exists:notifiche,id_notifica',  // Verifica che id_notifica esista
     ]);
 
@@ -53,7 +53,7 @@ class StudentController extends Controller
     $student = new Student();
     $student->nome = $request->nome;
     $student->cognome = $request->cognome;
-    $student->classe = $request->classe;
+    $student->id_classe = $request->id_classe;
     $student->id_notifica = $request->id_notifica;
 
     // Puoi assegnare automaticamente un id_user (ad esempio il primo utente creato con il ruolo studente)
@@ -114,14 +114,14 @@ class StudentController extends Controller
     $validated = $request->validate([
         'nome' => 'required|string|max:255',
         'cognome' => 'required|string|max:255',
-        'classe' => 'required|string|max:45',
+        'id_classe' => 'required|string|max:45',
         'id_notifica' => 'nullable|integer',
     ]);
 
     // Assegna i nuovi valori ai campi
     $student->nome = $validated['nome'];
     $student->cognome = $validated['cognome'];
-    $student->classe = $validated['classe'];
+    $student->id_classe = $validated['id_classe'];
     $student->id_notifica = $validated['id_notifica'];
 
     // Salva le modifiche

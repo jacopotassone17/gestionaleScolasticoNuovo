@@ -20,12 +20,12 @@
         </div>
 
         <div class="mb-4">
-            <label for="classe" class="block">Classe</label>
+            <label for="id_classe" class="block">Classe</label>
             <select name="id_classe" id="id_classe" class="border p-2 w-full" required>
                 <option value="">Seleziona Classe</option>
                 @foreach ($classes as $classe)
-                    <option value="{{ $classe->id_classe }}" {{ $classe->id_classe == $student->classe ? 'selected' : '' }}>
-                        {{ $classe->nome }} {{ $classe->sezione }}
+                    <option value="{{ $classe->id_classe }}" {{ $classe->id_classe == $student->id_classe ? 'selected' : '' }}>
+                        {{ $classe->id_classe }}
                     </option>
                 @endforeach
             </select>

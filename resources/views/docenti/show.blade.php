@@ -13,9 +13,6 @@
         @if($docente->seconda_materia)
             <p><strong>Seconda materia:</strong> {{ $docente->seconda_materia }}</p>
         @endif
-        @if($docente->user)
-            <p><strong>Utente associato:</strong> {{ $docente->user->name }}</p>
-        @endif
     </div>
 
     <a href="{{ route('docenti.index') }}" class="text-blue-600 hover:underline mt-4 inline-block">← Torna alla lista docenti</a>

@@ -21,7 +21,6 @@ class Teacher extends Model
         'materia',
         'seconda_materia',
         'email',
-        'password',
     ];
 
     // Relazione con il modello User
